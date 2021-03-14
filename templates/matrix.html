@@ -9,7 +9,7 @@
 <body>
     <div class = 'container' style='padding-top: 50px;'>
 <h1>Calculadora</h1>
-<form method='post' action="/">
+<form method='post' action="/matrix">
 
 
 
@@ -21,15 +21,18 @@
                   {% set nombre = 'fila'+ i|string() +'columna'+ ii|string() %}
                   {% print(nombre) %}
                   <input type="number" class ="form-control" name="{{nombre}}" placeholder="">
-                  <button type="submit" class="btn btn-primary">Calcular suma total</button>
+
+
                </td>
+
        {%endfor%}
     </tr>
-    
+
+
     {%endfor%}
-    
+        <button type="submit" class="btn btn-primary">Calcular suma total</button>
        </table>
-       
+
        >
     </form>
     </div>
