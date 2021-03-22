@@ -4,22 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <title>Hello</title>
+    <title>Matriz</title>
 </head>
 <body>
     <div class = 'container' style='padding-top: 50px;'>
-<h1>Calculadora</h1>
+<h1>Solución por Cholesky</h1>
 <form method='post' action="/matrix">
 
 
-
+<h3>Ingrese valores para la matriz A</h3>
 <table class='table table-dark table-bordered'>
     {% for i in range(0, fila)%}
     <tr>
         {% for ii in range(0, columna)%}
                <td>
                   {% set nombre = 'fila'+ i|string() +'columna'+ ii|string() %}
-                  {% print(nombre) %}
+                  {% print("Ingrese valor:") %}
                   <input type="number" class ="form-control" name="{{nombre}}" placeholder="">
 
 
@@ -30,10 +30,27 @@
 
 
     {%endfor%}
-        <button type="submit" class="btn btn-primary">Calcular suma total</button>
+    
+        <button type="submit" class="btn btn-primary">Calcular Cholesky</button>
+        
        </table>
 
-       >
+<br>
+<br>
+<h3>Ingrese valores para b</h3>
+
+<table class='table table-dark table-bordered'>
+        {% for i in range(0, fila)%}
+        <tr>
+                      {% set nombre = 'filab'+ i|string() %}
+                      {% print("Ingrese valor:") %}
+                      <input type="number" class ="form-control" name="{{nombre}}" placeholder="">
+
+    
+           {%endfor%}
+        </tr>
+           </table>
+       
     </form>
     </div>
 </body>

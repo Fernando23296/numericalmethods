@@ -27,7 +27,7 @@ def cholesky_pro(A,b):
     x = np.linalg.solve(chol_t,y)
     #valores de x
     #print(x)
-    return paso_2_1,paso_2_2, chol, chol_t, y,  x
+    return (paso_2_1,paso_2_2, chol, chol_t, y,  x)
 '''
 A = [[1,-6],[1,-2],[1,1],[1,7]]
 b = [[-1],[2],[1],[6]]

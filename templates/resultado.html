@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+    <title>Solución por Cholesky</title>
+</head>
+<body>
+
+    {% set a = resultado[0]%}
+    {% set a_shape = a.shape%}
+    {% set a_filas = a_shape[0]%}
+    {% set a_columnas = a_shape[1]%}
+
+
+    {% set b = resultado[1]%}
+    {% set b_shape = b.shape%}
+    {% set b_filas = b_shape[0]%}
+    {% set b_columnas = b_shape[1]%}
+
+
+    {% set c = resultado[2]%}
+    {% set c_shape = c.shape%}
+    {% set c_filas = c_shape[0]%}
+    {% set c_columnas = c_shape[1]%}
+    
+    
+    {% set d = resultado[3]%}
+    {% set d_shape = d.shape%}
+    {% set d_filas = d_shape[0]%}
+    {% set d_columnas = d_shape[1]%}
+
+
+    {% set e = resultado[4]%}
+    {% set e_shape = e.shape%}
+    {% set e_filas = e_shape[0]%}
+    {% set e_columnas = e_shape[1]%}
+
+
+    {% set f = resultado[5]%}
+    {% set f_shape = f.shape%}
+    {% set f_filas = f_shape[0]%}
+    {% set f_columnas = f_shape[1]%}
+   
+    
+<h1>Solución por Cholesky</h1>
+<h3>A tranpuesta por A</h3>
+<table class='table table-bordered'>
+    {% for i in range(0, a_filas)%}
+    <tr>
+        {% for ii in range(0, a_columnas)%}
+               <td>
+                  <input type="number" class ="form-control" placeholder="{{a[i][ii]}}">
+               </td>
+       {%endfor%}
+    </tr>
+    {%endfor%}
+</table>
+
+<h3>A transpuesta por b</h3>
+<table class='table table-bordered'>
+    {% for i in range(0, b_filas)%}
+    <tr>
+        {% for ii in range(0, b_columnas)%}
+               <td>
+                  <input type="number" class ="form-control" placeholder="{{b[i][ii]}}">
+               </td>
+       {%endfor%}
+    </tr>
+    {%endfor%}
+</table>
+
+<h3>L (triangular superior)</h3>
+<table class='table table-bordered'>
+    {% for i in range(0, c_filas)%}
+    <tr>
+        {% for ii in range(0, c_columnas)%}
+               <td>
+                  <input type="number" class ="form-control" placeholder="{{c[i][ii]}}">
+               </td>
+       {%endfor%}
+    </tr>
+    {%endfor%}
+</table>
+
+
+<h3>L tranpuesta (triangular inferior)</h3>
+<table class='table table-bordered'>
+    {% for i in range(0, d_filas)%}
+    <tr>
+        {% for ii in range(0, d_columnas)%}
+               <td>
+                  <input type="number" class ="form-control" placeholder="{{d[i][ii]}}">
+               </td>
+       {%endfor%}
+    </tr>
+    {%endfor%}
+</table>
+
+<h3>Valores y</h3>
+<table class='table table-bordered'>
+    {% for i in range(0, e_filas)%}
+    <tr>
+        {% for ii in range(0, e_columnas)%}
+               <td>
+                  <input type="number" class ="form-control" placeholder="{{e[i][ii]}}">
+               </td>
+       {%endfor%}
+    </tr>
+    {%endfor%}
+</table>
+
+<h3>Valores x</h3>
+<table class='table table-bordered'>
+    {% for i in range(0, f_filas)%}
+    <tr>
+        {% for ii in range(0, f_columnas)%}
+               <td>
+                  <input type="number" class ="form-control" placeholder="{{f[i][ii]}}">
+               </td>
+       {%endfor%}
+    </tr>
+    {%endfor%}
+</table>
+
+</body>
+</html>
