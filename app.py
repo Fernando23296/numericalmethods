@@ -2,8 +2,10 @@ from flask import Flask, render_template, request
 from jacobi import jacobi
 from cholesky import cholesky_pro
 from scipy.linalg import solve
+from trapecio import trapecio
 import scipy.linalg
 import numpy as np
+from math import sin,pi,e
 app = Flask(__name__)
 
 
@@ -14,6 +16,12 @@ app = Flask(__name__)
 
 @app.route('/', methods=['GET','POST'])
 def index():
+    
+    return render_template('index.html')
+
+
+@app.route('/cholesky_window', methods=['GET','POST'])
+def cholesky_window():
     global columna
     global fila
     global filab
@@ -22,7 +30,20 @@ def index():
         fila = int(request.form['fila'])
         identidad = np.eye(columna,fila)
         return render_template('matrix.html', columna=columna, fila=fila, identidad = identidad)
-    return render_template('index.html')
+    return render_template('cholesky_window.html')
+
+@app.route('/regla_trapecio', methods=['GET','POST'])
+def regla_trapecio():
+    if request.method=='POST':
+        a = int(request.form['a'])
+        b = int(request.form['b'])
+
+        integral = str(request.form['integral'])
+        integral_2 = lambda x:eval(integral)
+        n = int(request.form['n'])
+        resultado = trapecio(a, b, integral_2, n)
+        return render_template('trapecio_resultado.html', resultado = resultado, a = a, b = b, n = n, integral = integral)
+    return render_template('trapecio.html')
 
 @app.route('/matrix', methods=['GET','POST'])
 def matrix():

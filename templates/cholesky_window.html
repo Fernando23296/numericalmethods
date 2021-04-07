@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <title>Hello</title>
+</head>
+<body>
+    <div class = 'container' style='padding-top: 50px;'>
+<h1>Solución por Cholesky</h1>
+<form method='post' action="/cholesky_window">
+
+<div class='form-group row'>
+    <div class="col-sm-6">
+        <label>Ingrese filas:</label>
+
+    </div>
+
+    <div class='col-sm-6'>
+        <input type="number" class ="form-control" name="fila" placeholder="Numero de filas">
+    </div>
+</div>
+
+
+<div class='form-group row'>
+    <div class="col-sm-6">
+        <label>Ingrese columnas:</label>
+
+    </div>
+    <div class='col-sm-6'>
+        <input type="number" class ="form-control" name="columna" placeholder="Numero de columnas">
+    </div>
+</div>
+
+<div class='form-group row'>
+    <div style="text-align: center"class='col-sm-12'>
+        <button type="submit" class="btn btn-primary">Ingresar datos</button>
+    </div>
+</div>
+
+<a href="{{ url_for('index') }}"><h3>Regresar al menú</h3></a>
+</form>
+
+    </div>
+</body>
+</html>
